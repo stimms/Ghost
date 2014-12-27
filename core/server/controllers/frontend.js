@@ -299,6 +299,9 @@ frontendControllers = {
             editFormat,
             usingStaticPermalink = false;
 
+        if(path.match(/^\/\d{4}\/\d{2}\/\d{2}.*/))
+              path = path.replace(/^\/\d{4}\/\d{2}\/\d{2}/,'');
+
         api.settings.read('permalinks').then(function (response) {
             var permalink = response.settings[0],
                 postLookup;
