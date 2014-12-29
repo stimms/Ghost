@@ -121,11 +121,11 @@ fi
 if [ -e "$DEPLOYMENT_TARGET/Gruntfile.js" ]; then
   pushd "$DEPLOYMENT_TARGET"
   echo installing grunt-cli
-  eval $NPM_CMD install grunt-cli
+  $NPM_CMD install grunt-cli
   echo running grunt init
-  eval $NPM_CMD ./node_modules/.bin/grunt --no-color init
+  $NPM_CMD ./node_modules/.bin/grunt --no-color init
   echo running grunt prod
-  eval ./node_modules/.bin/grunt --no-color prod
+  ./node_modules/.bin/grunt --no-color prod
   exitWithMessageOnError "Grunt install failed"
   popd
 fi
